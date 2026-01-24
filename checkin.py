@@ -154,7 +154,7 @@ class GLaDOS:
 
     def checkin(self):
         """执行签到"""
-        return self.req('POST', '/api/user/checkin', {'token': 'glados.one'})
+        return self.req('POST', '/api/user/checkin', {'token': 'glados.cloud'})
 
 # ================= 主程序 =================
 
