@@ -28,10 +28,11 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
         
-      - name: Random Delay (0-10 minutes)
-        # 删除了 if 条件，现在不管是 schedule 还是 workflow_dispatch 都会执行这段代码
+      - name: Random Delay (1-10 minutes)
         run: |
-          DELAY=$((RANDOM % 600))
+          # 生成 0-540 的随机数，然后加上 60
+          # 结果范围：60 到 600 秒（即 1 到 10 分钟）
+          DELAY=$((RANDOM % 541 + 60))
           echo "随机延迟 $DELAY 秒后开始执行签到..."
           sleep $DELAY
           
